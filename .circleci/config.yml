@@ -28,7 +28,7 @@ jobs:
             git config --global user.name "CircleCI"
       - run:
           name: Scan host before publish
-          command: ssh-keyscan github.com >> ~/.ssh/known_hosts
+          command: mkdir ~/.ssh/ && ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run:
           name: Install gh-pages
           command: yarn global add gh-pages
