@@ -1,5 +1,5 @@
 export const getAvatar = (name, version) => {
-  return `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${name}.png`;
+  return `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${name}.png`;
 };
 
 /**
@@ -8,7 +8,7 @@ export const getAvatar = (name, version) => {
  * @param {String} type `splash` or `loading`
  */
 export const getImage = (name, type = "splash") => {
-  return `http://ddragon.leagueoflegends.com/cdn/img/champion/${type}/${name}.jpg`;
+  return `https://ddragon.leagueoflegends.com/cdn/img/champion/${type}/${name}.jpg`;
 };
 
 /**
