@@ -22,18 +22,20 @@
       v-for="skin in champion.skins"
       :key="skin.num"
     >
-      <div class="relative">
-        <span
-          v-show="skin.loaded"
-          v-for="([year, vote], idx) in Object.entries(
-            skinVotes[skin.num]
-          ).reverse()"
-          :key="year"
-          :class="'right-' + idx * 8 + ' ' + badgeColors[year]"
-          class="absolute -top-2 px-2 py-1 text-xs font-bold leading-none text-white rounded-full select-none"
-        >
-          {{ vote }}
-        </span>
+      <div class="flex justify-end">
+        <div class="absolute">
+          <span
+            v-show="skin.loaded"
+            v-for="[year, vote] in Object.entries(
+              skinVotes[skin.num]
+            ).reverse()"
+            :key="year"
+            :class="badgeColors[year]"
+            class="relative -top-3 ml-1 px-2 py-1 text-xs font-bold leading-none text-white rounded-full select-none"
+          >
+            {{ vote }}
+          </span>
+        </div>
       </div>
 
       <div
