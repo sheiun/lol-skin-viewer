@@ -16,7 +16,9 @@ export const getSkinName = (champId, skinId) => {
   const skinName = Array.from(
     new Set(
       Object.values(bests)
-        .map((data) => Object.keys(data[champName]))
+        .map((data) =>
+          data[champName] !== undefined ? Object.keys(data[champName]) : []
+        )
         .flat()
     )
   ).sort((a, b) => levenshtein(a, skinId) - levenshtein(b, skinId))[0];
@@ -33,7 +35,12 @@ export const getSkinPoll = (champId, skinId) => {
   const champName = getChampionName(champId);
   const skinName = getSkinName(champId, skinId);
   return Object.entries(bests).reduce((acc, [year, data]) => {
-    if (data[champName][skinName] === undefined) return acc;
+    if (
+      data[champName] === undefined ||
+      data[champName][skinName] === undefined
+    )
+      return acc;
+    console.log(acc);
     return { ...acc, [year]: data[champName][skinName] };
   }, {});
 };
