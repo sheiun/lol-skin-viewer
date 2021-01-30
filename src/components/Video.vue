@@ -1,7 +1,7 @@
 <template>
   <iframe
     class="flex justify-center"
-    :src="src"
+    :src="'https://www.youtube.com/embed/' + id"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
@@ -11,7 +11,7 @@
 <script>
 export default {
   name: "Video",
-  props: { src: String },
+  props: { id: String },
 };
 </script>
 

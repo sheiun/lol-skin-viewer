@@ -18,9 +18,10 @@
 
   <div class="flex flex-wrap justify-center">
     <div
-      class="w-1/2 lg:w-1/6 m-5 bg-blue-100"
+      @click="openVideoModal(skin)"
       v-for="skin in champion.skins"
       :key="skin.num"
+      class="cursor-pointer w-1/2 lg:w-1/6 m-5 bg-blue-100"
     >
       <div class="flex justify-end">
         <div class="absolute">
@@ -53,14 +54,16 @@
       </div>
     </div>
   </div>
-  <Modal>
-    <Video src="https://www.youtube.com/embed/rOp0LP6aQxo" />
+  <Modal ref="modal">
+    <Video :id="videoId" />
   </Modal>
 </template>
 
 <script>
 import { getAvatar, getImage } from "@/lib/lol";
 import { getSkinPoll } from "@/lib/polls";
+
+import videos from "@/data/videos";
 
 import Modal from "@/components/Modal";
 import Video from "@/components/Video";
@@ -97,7 +100,19 @@ export default {
           {}
         );
       }),
+      videoId: "",
+      videoIds: computed(() =>
+        state.defaultChampion !== undefined
+          ? videos[state.defaultChampion.name]
+          : {}
+      ),
+      openVideoModal,
     });
+
+    function openVideoModal(skin) {
+      state.videoId = state.videoIds[skin.name];
+      this.$refs.modal.isOpen = true;
+    }
 
     watch(
       () => [props.language, props.version],

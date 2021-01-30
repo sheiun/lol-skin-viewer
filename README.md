@@ -8,7 +8,7 @@ We aims to create LOL Skin Viewer let you can viewing all skins at once, and vie
 
 - Viewing all skins of champions
   - [x] Loading
-  - [ ] Spotlight video
+  - [x] Spotlight video
   - [ ] 3D Models
 - Best skin per champion polls
   - [x] 2018
@@ -19,8 +19,7 @@ We aims to create LOL Skin Viewer let you can viewing all skins at once, and vie
 
 ## TODO
 
-- [ ] Crawl spotlight videos id
-  - UC0NwzCHb8Fg89eTB5eYX17Q
+- [x] Crawl spotlight videos id
 - [ ] Champions filters by `tags` and `genre`
 - [ ] Link to polls
 - [ ] Add about page
