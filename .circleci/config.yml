@@ -1,0 +1,36 @@
+version: 2
+
+jobs:
+  deploy:
+    docker:
+      - image: node:lts-slim
+    steps:
+      - checkout
+      - run:
+          name: Install packages
+          command: yarn install
+      - run:
+          name: Run linter
+          command: yarn lint
+      - run:
+          name: Build and minify app
+          command: yarn build
+      - run:
+          name: Post build CNAME to dist
+          command: echo "lol.bd.pe" > dist/CNAME
+      - run:
+          name: Configure git settings
+          command: |
+            git config --global user.email "circle-ci@lol.bd.pe"
+            git config --global user.name "CircleCI"
+      - run:
+          name: Install gh-pages
+          command: yarn global add gh-pages
+      - run:
+          name: Deploy to GitHub Pages
+          command: gh-pages --dist dist/ --message "[skip ci] Auto updates"
+workflows:
+  version: 2
+  main:
+    jobs:
+      - deploy
