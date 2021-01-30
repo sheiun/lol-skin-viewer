@@ -1,3 +1,0 @@
-- [ ] Best champion
-- [ ] Youtube Spotlight
-  - UC0NwzCHb8Fg89eTB5eYX17Q

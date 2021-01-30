@@ -1,24 +1,26 @@
-# lol-skin-viewer
+# LOL Skin Viewer
 
-## Project setup
-```
-yarn install
-```
+Since viewing skins in the LOL client is unfriendly and the too many skins are different between 2D art picture and 3D models.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+We aims to create LOL Skin Viewer let you can viewing all skins at once, and view 3D models without entering the game or searching on the net, and also refer to the polls of the `Best skin per champion polls` from reddit.
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Features
 
-### Lints and fixes files
-```
-yarn lint
-```
+- Viewing all skins of champions
+  - [x] Loading
+  - [ ] Spotlight video
+  - [ ] 3D Models
+- Best skin per champion polls
+  - [x] 2018
+  - [x] 2019
+  - [x] 2020
+    - Polls not finished (update needed)
+  - [ ] 2021
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## TODO
+
+- [ ] Crawl spotlight videos id
+  - UC0NwzCHb8Fg89eTB5eYX17Q
+- [ ] Champions filters by `tags` and `genre`
+- [ ] Link to polls
+- [ ]
