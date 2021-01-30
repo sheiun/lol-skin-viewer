@@ -40,7 +40,6 @@ export const getSkinPoll = (champId, skinId) => {
       data[champName][skinName] === undefined
     )
       return acc;
-    console.log(acc);
     return { ...acc, [year]: data[champName][skinName] };
   }, {});
 };
