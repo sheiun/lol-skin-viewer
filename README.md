@@ -23,4 +23,5 @@ We aims to create LOL Skin Viewer let you can viewing all skins at once, and vie
   - UC0NwzCHb8Fg89eTB5eYX17Q
 - [ ] Champions filters by `tags` and `genre`
 - [ ] Link to polls
-- [ ]
+- [ ] Add about page
+- [ ] Sorted by votes
