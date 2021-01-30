@@ -108,7 +108,7 @@ export default {
 
     function updateChampion(language, version, target = "champion") {
       fetch(
-        `http://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion/${route.params.champion}.json`
+        `https://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion/${route.params.champion}.json`
       )
         .then((res) => res.json())
         .then((data) => {
