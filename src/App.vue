@@ -10,7 +10,7 @@
               <span class="sr-only">Workflow</span>
               <img
                 class="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                :src="require('@/assets/logo.svg')"
                 alt=""
               />
               <span class="ml-5 text-gray-500 hover:text-black">
@@ -47,9 +47,11 @@
         <nav class="hidden md:flex space-x-10">
           <a
             href="#"
+            v-for="tab in tabs"
+            :key="tab"
             class="text-base font-medium text-gray-500 hover:text-gray-900"
           >
-            ??
+            {{ tab }}
           </a>
         </nav>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -125,10 +127,12 @@
           <div class="py-6 px-5 space-y-6">
             <div class="grid grid-cols-2 gap-y-4 gap-x-8">
               <a
+                v-for="tab in tabs"
+                :key="tab"
                 href="#"
                 class="text-base font-medium text-gray-900 hover:text-gray-700"
               >
-                ??
+                {{ tab }}
               </a>
             </div>
             <div>
@@ -164,6 +168,7 @@ export default {
       versions,
       language: languages[0],
       version: versions[0],
+      tabs: ["About"],
       isMenuOpen: false,
     });
     return { ...toRefs(state) };
