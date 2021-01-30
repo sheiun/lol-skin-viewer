@@ -30,7 +30,7 @@
           ).reverse()"
           :key="year"
           :class="'right-' + idx * 8 + ' ' + badgeColors[year]"
-          class="absolute -top-2 px-2 py-1 text-xs font-bold leading-none text-white rounded-full"
+          class="absolute -top-2 px-2 py-1 text-xs font-bold leading-none text-white rounded-full select-none"
         >
           {{ vote }}
         </span>
