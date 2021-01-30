@@ -26,12 +26,10 @@
         <div class="absolute">
           <span
             v-show="skin.loaded"
-            v-for="[year, vote] in Object.entries(
-              skinVotes[skin.num]
-            ).reverse()"
+            v-for="[year, vote] in Object.entries(skinVotes[skin.num])"
             :key="year"
             :class="badgeColors[year]"
-            class="relative -top-3 ml-1 px-2 py-1 text-xs font-bold leading-none text-white rounded-full select-none"
+            class="relative -top-3 -right-3 ml-1 px-2 py-1 text-xs font-bold leading-none text-white rounded-full select-none"
           >
             {{ vote }}
           </span>
