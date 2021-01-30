@@ -51,7 +51,7 @@
       >
         <div
           v-show="isOpen"
-          class="absolute mt-1 w-full rounded-md bg-white shadow-lg"
+          class="absolute z-10 mt-1 w-full rounded-md bg-white shadow-lg"
         >
           <ul
             tabindex="-1"
