@@ -149,6 +149,25 @@
         </div>
       </div>
     </transition>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <nav class="border-t-2 border-gray-100 ">
+        <div class="container mx-auto py-4">
+          <div class="md:flex md:items-center md:justify-center">
+            <ul>
+              <li class="md:mx-2 md:inline leading-7 text-sm">
+                <a
+                  class="text-base font-medium text-gray-500 hover:text-gray-900"
+                  href="#"
+                >
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
   </div>
 </template>
 
