@@ -11,7 +11,6 @@
               <img
                 class="h-8 w-auto sm:h-10"
                 :src="require('@/assets/logo.svg')"
-                alt=""
               />
               <span class="ml-5 text-gray-500 hover:text-black">
                 LOL Skin Viewer
@@ -93,8 +92,8 @@
               <div>
                 <img
                   class="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                  alt="Workflow"
+                  :src="require('@/assets/logo.svg')"
+                  alt="LOL Skin Viewer"
                 />
               </div>
               <div class="-mr-2">
