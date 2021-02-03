@@ -21,7 +21,7 @@
       @click="openVideoModal(skin)"
       v-for="skin in champion.skins"
       :key="skin.num"
-      class="cursor-pointer w-1/2 lg:w-1/6 m-5 bg-blue-100"
+      class="cursor-pointer w-48 lg:w-52 m-5 bg-blue-100"
     >
       <div class="flex justify-end">
         <div class="absolute">
@@ -39,11 +39,11 @@
 
       <div
         v-show="!skin.loaded"
-        class="w-48 lg:w-52 max-w-full h-72 lg:h-96 bg-gray-500 animate-pulse"
+        class="w-48 lg:w-52 max-w-full h-80 lg:h-96 bg-gray-500 animate-pulse"
       ></div>
       <img
         v-show="skin.loaded"
-        class="w-48 lg:w-52 max-w-full h-72 lg:h-96"
+        class="w-48 lg:w-52 max-w-full h-80 lg:h-96"
         :onload="() => (skin.loaded = true)"
         :src="getImage($route.params.champion + '_' + skin.num, 'loading')"
       />

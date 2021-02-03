@@ -10,13 +10,24 @@
   </div>
   <div class="mt-10 p-4 flex flex-wrap justify-center">
     <div
-      class="ml-4 mt-4 text-2x text-blue-500 bg-blue-100"
+      class="w-12 lg:w-28 ml-4 mt-4 bg-blue-100"
       v-for="(champ, idx) in filteredChampions"
       :key="idx"
     >
-      <router-link :to="`/c/${champ.id}`">
-        <img :src="getAvatar(champ.id, version)" />
-        <div class="flex justify-center">
+      <router-link :to="`/c/${champ.id}`" class="">
+        <div
+          v-show="!champ.loaded"
+          class="w-12 h-12 lg:w-28 lg:h-28 bg-gray-500 animate-pulse"
+        ></div>
+        <img
+          class="w-12 h-12 lg:w-28 lg:h-28"
+          v-show="champ.loaded"
+          :onload="() => (champ.loaded = true)"
+          :src="getAvatar(champ.id, version)"
+        />
+        <div
+          class="flex justify-center text-xs lg:text-base text-blue-500 whitespace-nowrap overflow-hidden"
+        >
           {{ champ.name }}
         </div>
       </router-link>
