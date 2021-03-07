@@ -69,7 +69,20 @@ export default {
       )
         .then((res) => res.json())
         .then((data) => {
-          state.champions = data.data;
+          if (state.champions === undefined) {
+            state.champions = data.data;
+          } else {
+            const champions = {};
+            for (const [key, value] of Object.entries(data.data)) {
+              if (state.champions[key]) {
+                value.loaded = state.champions[key].loaded;
+              } else {
+                value.loaded = false;
+              }
+              champions[key] = value;
+            }
+            state.champions = champions;
+          }
         });
     }
 
