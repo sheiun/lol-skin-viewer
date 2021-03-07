@@ -28,7 +28,7 @@ jobs:
             git config --global user.name "CircleCI"
       - run:
           name: Scan host before publish
-          command: mkdir ~/.ssh/ && ssh-keyscan github.com >> ~/.ssh/known_hosts
+          command: mkdir -p ~/.ssh/ && ssh-keyscan github.com >> ~/.ssh/known_hosts
       - add_ssh_keys:
           fingerprints:
             - "4d:a0:d1:c8:9a:33:d3:a9:22:16:8c:02:4b:d5:2d:34"
