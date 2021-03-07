@@ -18,8 +18,8 @@
 
   <div class="flex flex-wrap justify-center">
     <div
-      @click="openVideoModal(skin)"
-      v-for="skin in champion.skins"
+      @click="openVideoModal(idx)"
+      v-for="(skin, idx) in champion.skins"
       :key="skin.num"
       class="cursor-pointer w-48 lg:w-52 m-5 bg-blue-100"
     >
@@ -103,14 +103,15 @@ export default {
       videoId: "",
       videoIds: computed(() =>
         state.defaultChampion !== undefined
-          ? videos[state.defaultChampion.name]
+          ? videos[state.defaultChampion.id]
           : {}
       ),
       openVideoModal,
     });
 
-    function openVideoModal(skin) {
-      state.videoId = state.videoIds[skin.name];
+    // TODO: use skin id instead of skin name
+    function openVideoModal(idx) {
+      state.videoId = state.videoIds[state.defaultChampion.skins[idx].name];
       this.$refs.modal.isOpen = true;
     }
 
