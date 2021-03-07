@@ -1,4 +1,6 @@
-const title = "LOL Skin Viewer";
+const { version } = require("./package.json");
+
+const title = "LOL Skin Viewer - " + version;
 
 module.exports = {
   chainWebpack: (config) => {
