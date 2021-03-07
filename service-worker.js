@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.e29fc5c6d8c9a0acfc55f542eed6e106.js"
+  "/precache-manifest.a965825835b23d704c5e00c42c220d6a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "lol-skin-viewer"});
