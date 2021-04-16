@@ -127,12 +127,16 @@ import { reactive, toRefs, watch } from "vue";
 export default {
   name: "Select",
   props: {
+    name: String,
     items: Array,
   },
 
   setup(props, { emit }) {
     const state = reactive({
-      selected: 0,
+      selected: Math.max(
+        props.items.indexOf(window.localStorage.getItem(props.name)),
+        0
+      ),
       hovered: -1,
       isOpen: false,
     });
@@ -141,6 +145,7 @@ export default {
       () => state.selected,
       (selected) => {
         emit("select", props.items[selected]);
+        window.localStorage.setItem(props.name, props.items[selected]);
       }
     );
 

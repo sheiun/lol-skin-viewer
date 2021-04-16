@@ -57,11 +57,13 @@
           <!-- TODO: i18n of `Language` -->
           <Select
             class="w-1/4 ml-5"
+            :name="'language'"
             :items="languages"
             @select="(item) => (language = item)"
           />
           <Select
             class="w-1/4 ml-5"
+            :name="'version'"
             :items="versions"
             @select="(item) => (language = version)"
           />
@@ -184,11 +186,12 @@ export default {
     const state = reactive({
       languages,
       versions,
-      language: languages[0],
-      version: versions[0],
+      language: window.localStorage.getItem("language") || languages[0],
+      version: window.localStorage.getItem("version") || versions[0],
       tabs: ["About"],
       isMenuOpen: false,
     });
+    console.log(window.localStorage.getItem("language"));
     return { ...toRefs(state) };
   },
 };
