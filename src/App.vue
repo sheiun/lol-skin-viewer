@@ -191,7 +191,6 @@ export default {
       tabs: ["About"],
       isMenuOpen: false,
     });
-    console.log(window.localStorage.getItem("language"));
     return { ...toRefs(state) };
   },
 };
